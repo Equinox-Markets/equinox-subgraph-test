@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: eFTM
@@ -13,18 +13,18 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/ctoken.ts
+      file: eFTM\eFTM.wasm
       entities:
         - User
         - Market
         - CTokenInfo
       abis:
         - name: CToken
-          file: ./abis/ctoken.json
+          file: eFTM\abis\ctoken.json
         - name: PriceOracle
-          file: ./abis/priceOracle.json
+          file: eFTM\abis\priceOracle.json
         - name: ERC20
-          file: ./abis/erc20.json
+          file: eFTM\abis\erc20.json
       eventHandlers:
         - event: Mint(address,uint256,uint256)
           handler: handleMint
@@ -55,18 +55,18 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/ctoken.ts
+      file: eFTM\eFTM.wasm
       entities:
         - User
         - Market
         - CTokenInfo
       abis:
         - name: CToken
-          file: ./abis/ctoken.json
+          file: eBTC\abis\ctoken.json
         - name: PriceOracle
-          file: ./abis/priceOracle.json
+          file: eBTC\abis\priceOracle.json
         - name: ERC20
-          file: ./abis/erc20.json
+          file: eBTC\abis\erc20.json
       eventHandlers:
         - event: Mint(address,uint256,uint256)
           handler: handleMint
@@ -97,16 +97,16 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/ctoken.ts
+      file: eFTM\eFTM.wasm
       entities:
         - User
         - Market
         - CTokenInfo
       abis:
         - name: CToken
-          file: ./abis/ctoken.json
+          file: eETH\abis\ctoken.json
         - name: PriceOracle
-          file: ./abis/priceOracle.json
+          file: eETH\abis\priceOracle.json
       eventHandlers:
         - event: Mint(address,uint256,uint256)
           handler: handleMint
@@ -137,18 +137,18 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/ctoken.ts
+      file: eFTM\eFTM.wasm
       entities:
         - User
         - Market
         - CTokenInfo
       abis:
         - name: CToken
-          file: ./abis/ctoken.json
+          file: eUSDC\abis\ctoken.json
         - name: PriceOracle
-          file: ./abis/priceOracle.json
+          file: eUSDC\abis\priceOracle.json
         - name: ERC20
-          file: ./abis/erc20.json
+          file: eUSDC\abis\erc20.json
       eventHandlers:
         - event: Mint(address,uint256,uint256)
           handler: handleMint
@@ -179,15 +179,15 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/comptroller.ts
+      file: Comptroller\Comptroller.wasm
       entities:
         - Comptroller
         - Market
       abis:
         - name: Comptroller
-          file: ./abis/comptroller.json
+          file: Comptroller\abis\comptroller.json
         - name: PriceOracle
-          file: ./abis/priceOracle.json
+          file: Comptroller\abis\priceOracle.json
       eventHandlers:
         - event: MarketEntered(address,address)
           handler: handleMarketEntered

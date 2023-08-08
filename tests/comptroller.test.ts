@@ -9,7 +9,7 @@ import {
 import { Address, BigInt } from "@graphprotocol/graph-ts"
 import { NewPendingImplementation } from "../generated/schema"
 import { NewPendingImplementation as NewPendingImplementationEvent } from "../generated/Comptroller/Comptroller"
-import { handleNewPendingImplementation } from "../src/comptroller"
+import { handleNewPendingImplementation } from "../src/mappings/comptroller"
 import { createNewPendingImplementationEvent } from "./comptroller-utils"
 
 // Tests structure (matchstick-as >=0.5.0)

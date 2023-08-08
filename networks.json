@@ -1,8 +1,8 @@
 {
   "fantom": {
     "Comptroller": {
-      "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-      "startBlock": 0
+      "address": "0xaeCc8D03213A2cb39153Eea18B9ab2bB1aB9182b",
+      "startBlock": 1100000
     }
   }
 }
