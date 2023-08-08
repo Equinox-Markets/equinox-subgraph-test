@@ -1,0 +1,63 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Comptroller
+    network: fantom
+    source:
+      address: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+      abi: Comptroller
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - NewPendingImplementation
+        - NewImplementation
+        - NewPendingAdmin
+        - NewAdmin
+        - Failure
+        - MarketListed
+        - MarketEntered
+        - MarketExited
+        - NewCloseFactor
+        - NewCollateralFactor
+        - NewLiquidationIncentive
+        - NewMaxAssets
+        - NewPriceOracle
+        - Failure1
+      abis:
+        - name: Comptroller
+          file: ./abis/Comptroller.json
+      eventHandlers:
+        - event: NewPendingImplementation(address,address)
+          handler: handleNewPendingImplementation
+        - event: NewImplementation(address,address)
+          handler: handleNewImplementation
+        - event: NewPendingAdmin(address,address)
+          handler: handleNewPendingAdmin
+        - event: NewAdmin(address,address)
+          handler: handleNewAdmin
+        - event: Failure(uint256,uint256,uint256)
+          handler: handleFailure
+        - event: MarketListed(address)
+          handler: handleMarketListed
+        - event: MarketEntered(address,address)
+          handler: handleMarketEntered
+        - event: MarketExited(address,address)
+          handler: handleMarketExited
+        - event: NewCloseFactor(uint256,uint256)
+          handler: handleNewCloseFactor
+        - event: NewCollateralFactor(address,uint256,uint256)
+          handler: handleNewCollateralFactor
+        - event: NewLiquidationIncentive(uint256,uint256)
+          handler: handleNewLiquidationIncentive
+        - event: NewMaxAssets(uint256,uint256)
+          handler: handleNewMaxAssets
+        - event: NewPriceOracle(address,address)
+          handler: handleNewPriceOracle
+        - event: Failure(uint256,uint256,uint256)
+          handler: handleFailure1
+      file: ./src/comptroller.ts

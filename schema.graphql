@@ -1,0 +1,127 @@
+type NewPendingImplementation @entity(immutable: true) {
+  id: Bytes!
+  oldPendingImplementation: Bytes! # address
+  newPendingImplementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewImplementation @entity(immutable: true) {
+  id: Bytes!
+  oldImplementation: Bytes! # address
+  newImplementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewPendingAdmin @entity(immutable: true) {
+  id: Bytes!
+  oldPendingAdmin: Bytes! # address
+  newPendingAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewAdmin @entity(immutable: true) {
+  id: Bytes!
+  oldAdmin: Bytes! # address
+  newAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Failure @entity(immutable: true) {
+  id: Bytes!
+  error: BigInt! # uint256
+  info: BigInt! # uint256
+  detail: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketListed @entity(immutable: true) {
+  id: Bytes!
+  cToken: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketEntered @entity(immutable: true) {
+  id: Bytes!
+  cToken: Bytes! # address
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketExited @entity(immutable: true) {
+  id: Bytes!
+  cToken: Bytes! # address
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewCloseFactor @entity(immutable: true) {
+  id: Bytes!
+  oldCloseFactorMantissa: BigInt! # uint256
+  newCloseFactorMantissa: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewCollateralFactor @entity(immutable: true) {
+  id: Bytes!
+  cToken: Bytes! # address
+  oldCollateralFactorMantissa: BigInt! # uint256
+  newCollateralFactorMantissa: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewLiquidationIncentive @entity(immutable: true) {
+  id: Bytes!
+  oldLiquidationIncentiveMantissa: BigInt! # uint256
+  newLiquidationIncentiveMantissa: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewMaxAssets @entity(immutable: true) {
+  id: Bytes!
+  oldMaxAssets: BigInt! # uint256
+  newMaxAssets: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewPriceOracle @entity(immutable: true) {
+  id: Bytes!
+  oldPriceOracle: Bytes! # address
+  newPriceOracle: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Failure1 @entity(immutable: true) {
+  id: Bytes!
+  error: BigInt! # uint256
+  info: BigInt! # uint256
+  detail: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
